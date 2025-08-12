@@ -1,0 +1,15 @@
+import { RootLayout } from "~/src/layouts/root-layout";
+import type { Route } from "./+types/blog";
+import { generateMeta } from "~/src/helper/genarate-meta";
+
+export function meta({}: Route.MetaArgs) {
+  return [{ title: "Thiệp Mời tin tức" }];
+}
+export default function Blog() {
+  const meta = generateMeta({
+    title: "Thiệp Mời blog detail",
+    description:
+      "Tạo thiệp mời đám cưới đẹp và chuyên nghiệp. Thiết kế thiệp mời online với nhiều mẫu đẹp, tùy chỉnh thông tin và chia sẻ dễ dàng.",
+  });
+  return <RootLayout meta={meta}>Blog</RootLayout>;
+}
